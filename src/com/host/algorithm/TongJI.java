@@ -42,7 +42,7 @@ public class TongJI {
             e.printStackTrace();
         }
         finally {
-            if(fr!=null)fr.close();
+            if(fr != null)fr.close();
         }
         return null;
     }
