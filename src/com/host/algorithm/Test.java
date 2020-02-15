@@ -1,5 +1,8 @@
 package com.host.algorithm;
 
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -29,12 +32,30 @@ public class Test {
            //分数小于50
        }
     }
-    public static void main(String[] args){
+    public static void main3(String[] args){
         Scanner sc = new Scanner(System.in);
         String s = sc.nextLine();
         int i = Integer.parseInt(s);
         HashMap map = new HashMap();
        // map.putMapEntries(map,true);
 
+    }
+    public static void main(String[] args){
+        try {
+            MessageDigest md =MessageDigest.getInstance("md5");
+            String s = "hello";
+            byte[] bytes = s.getBytes();
+            byte[] digest = md.digest(bytes);
+            String re = new BigInteger(digest).toString(16);
+            System.out.println(re);
+            for (int i = 0; i< 32 -re.length();i++){
+                re = 0+re;
+            }
+            System.out.println(re);
+
+
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
     }
 }
