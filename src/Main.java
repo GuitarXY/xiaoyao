@@ -24,6 +24,7 @@ public class Main {
             }
 
 
+
             d =(d+1) %4;
             i = i + dir[d][0];
             j = j + dir[d][1];
