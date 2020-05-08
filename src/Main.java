@@ -1,6 +1,14 @@
 import java.util.*;
+class MyObject7 extends Main {
+    protected void e() throws CloneNotSupportedException {}
+    public static void main(String[] args)  {
+        Main test = new Main();
+       // test.te(); // Compile Error   ----- (1)
+    }
+}
 
 public class Main {
+    protected  void te() throws CloneNotSupportedException {super.clone();}
     static public  ArrayList<Integer> printMatrix(int [][] matrix) {
         ArrayList<Integer> list = new ArrayList<>();
         int [][] dir = {{0,1},{1,0},{0,-1},{-1,0}};
