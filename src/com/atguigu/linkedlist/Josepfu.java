@@ -2,17 +2,17 @@ package com.atguigu.linkedlist;
 
 public class Josepfu {
 	/**
-	 * 约瑟夫问题
-	 * 一群小孩围成一个圈0-n
-	 * 从第k个小孩报数,报到第M个数的小孩出列，有下一个小孩重新开始报数，
-	 * 直到所有小孩都出列，问小孩的出列顺序
+	 * 绾︾憻澶棶棰�
+	 * 涓�缇ゅ皬瀛╁洿鎴愪竴涓湀0-n
+	 * 浠庣k涓皬瀛╂姤鏁�,鎶ュ埌绗琈涓暟鐨勫皬瀛╁嚭鍒楋紝鏈変笅涓�涓皬瀛╅噸鏂板紑濮嬫姤鏁帮紝
+	 * 鐩村埌鎵�鏈夊皬瀛╅兘鍑哄垪锛岄棶灏忓鐨勫嚭鍒楅『搴�
 	 *
 	 * @param args
 	 */
 
 	public static void main(String[] args) {
 		CircleSingleLinkedList circleSingleLinkedList = new CircleSingleLinkedList();
-		circleSingleLinkedList.addBoy(25);// ����5��С���ڵ�
+		circleSingleLinkedList.addBoy(25);// 锟斤拷锟斤拷5锟斤拷小锟斤拷锟节碉拷
 		circleSingleLinkedList.showBoy();
 		
 		circleSingleLinkedList.countBoy(1, 2, 25); // 2->4->1->5->3
@@ -20,46 +20,46 @@ public class Josepfu {
 	}
 
 }
-//单项环形链表
+//鍗曢」鐜舰閾捐〃
 class CircleSingleLinkedList {
 
 	private Boy first = null;
-	//添加小孩链表围城一个环形
+	//娣诲姞灏忓閾捐〃鍥村煄涓�涓幆褰�
 	public void addBoy(int nums) {
 		if (nums < 1) {
-			System.out.println("nums��ֵ����ȷ");
+			System.out.println("nums锟斤拷值锟斤拷锟斤拷确");
 			return;
 		}
-		Boy curBoy = null; //辅助指针，帮助构建环形链表，总是指向最后的
+		Boy curBoy = null; //杈呭姪鎸囬拡锛屽府鍔╂瀯寤虹幆褰㈤摼琛紝鎬绘槸鎸囧悜鏈�鍚庣殑
 		for (int i = 1; i <= nums; i++) {
 			Boy boy = new Boy(i);
 			if (i == 1) {
 				first = boy;
-				first.setNext(first); // ���ɻ�
-				curBoy = first; // ��curBoyָ���һ��С��
+				first.setNext(first); // 锟斤拷锟缴伙拷
+				curBoy = first; // 锟斤拷curBoy指锟斤拷锟揭伙拷锟叫★拷锟�
 			} else {
-				curBoy.setNext(boy);//当前最后节点指向新加节点
-				boy.setNext(first);//新加节点指向first
-				curBoy = boy;//curBoy辅助指针移向末尾
+				curBoy.setNext(boy);//褰撳墠鏈�鍚庤妭鐐规寚鍚戞柊鍔犺妭鐐�
+				boy.setNext(first);//鏂板姞鑺傜偣鎸囧悜first
+				curBoy = boy;//curBoy杈呭姪鎸囬拡绉诲悜鏈熬
 			}
 		}
 	}
 
-	// ������ǰ�Ļ�������
+	// 锟斤拷锟斤拷锟斤拷前锟侥伙拷锟斤拷锟斤拷锟斤拷
 	public void showBoy() {
-		// �ж������Ƿ�Ϊ��
+		// 锟叫讹拷锟斤拷锟斤拷锟角凤拷为锟斤拷
 		if (first == null) {
-			System.out.println("û���κ�С��~~");
+			System.out.println("没锟斤拷锟轿猴拷小锟斤拷~~");
 			return;
 		}
-		// ��Ϊfirst���ܶ������������Ȼʹ��һ������ָ����ɱ���
+		// 锟斤拷为first锟斤拷锟杰讹拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟饺皇癸拷锟揭伙拷锟斤拷锟斤拷锟街革拷锟斤拷锟缴憋拷锟斤拷
 		Boy curBoy = first;
 		while (true) {
-			System.out.printf("小孩 %d \n", curBoy.getNo());
-			if (curBoy.getNext() == first) {// ˵���Ѿ��������
+			System.out.printf("灏忓 %d \n", curBoy.getNo());
+			if (curBoy.getNext() == first) {// 说锟斤拷锟窖撅拷锟斤拷锟斤拷锟斤拷锟�
 				break;
 			}
-			curBoy = curBoy.getNext(); // curBoy����
+			curBoy = curBoy.getNext(); // curBoy锟斤拷锟斤拷
 		}
 	}
 
@@ -71,7 +71,7 @@ class CircleSingleLinkedList {
 	 */
 	public void countBoy(int startNo, int countNum, int nums) {
 		if (first == null || startNo < 1 || startNo > nums) {
-			System.out.println("输入非法");
+			System.out.println("杈撳叆闈炴硶");
 			return;
 		}
 		Boy helper = first;
@@ -81,32 +81,32 @@ class CircleSingleLinkedList {
 			}
 			helper = helper.getNext();
 		}
-		for(int j = 0; j < startNo - 1; j++) {//报数前让first和helper移动k次
+		for(int j = 0; j < startNo - 1; j++) {//鎶ユ暟鍓嶈first鍜宧elper绉诲姩k娆�
 			first = first.getNext();
 			helper = helper.getNext();
 		}
 		while(true) {
-			if(helper == first) { //当圈中只有一个人
+			if(helper == first) { //褰撳湀涓彧鏈変竴涓汉
 				break;
 			}
-			for(int j = 0; j < countNum - 1; j++) {//让移动countNum次，出圈
+			for(int j = 0; j < countNum - 1; j++) {//璁╃Щ鍔╟ountNum娆★紝鍑哄湀
 				first = first.getNext();
 				helper = helper.getNext();
 			}
-			System.out.printf("小孩%d 出圈\n", first.getNo());
+			System.out.printf("灏忓%d 鍑哄湀\n", first.getNo());
 			first = first.getNext();
 			helper.setNext(first); //
 			
 		}
-		System.out.printf("小孩%d出圈 \n", first.getNo());
+		System.out.printf("灏忓%d鍑哄湀 \n", first.getNo());
 		
 	}
 }
 
-// ����һ��Boy�࣬��ʾһ���ڵ�
+// 锟斤拷锟斤拷一锟斤拷Boy锟洁，锟斤拷示一锟斤拷锟节碉拷
 class Boy {
-	private int no;// ���
-	private Boy next; // ָ����һ���ڵ�,Ĭ��null
+	private int no;// 锟斤拷锟�
+	private Boy next; // 指锟斤拷锟斤拷一锟斤拷锟节碉拷,默锟斤拷null
 
 	public Boy(int no) {
 		this.no = no;
