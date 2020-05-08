@@ -13,6 +13,7 @@ public class ReentrantLockTest {
         new Thread(() -> testx(),"线程B").start();
     }
     //随机
+
     private static void testx() {
         lock.lock();
         System.out.println(Thread.currentThread().getName()+"获得了锁");
