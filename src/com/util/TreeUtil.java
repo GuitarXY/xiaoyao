@@ -6,14 +6,7 @@ import java.util.ArrayList;
  * created by xiaoyao01  on 2020/4/24.
  **/
 
-class TreeNode {
-    int val = 0;
-    TreeNode left = null;
-    TreeNode right = null;
-    public TreeNode(int val) {
-        this.val = val;
-    }
-}
+
 public class TreeUtil {
     //层级遍历树
     public static  ArrayList<ArrayList<Integer>> Print(TreeNode treeNode){

@@ -1,5 +1,5 @@
 package com.host.algorithm.leetcode;
- class TreeNode {
+/* class TreeNode {
     int val;
     TreeNode left;
     TreeNode right;
@@ -7,8 +7,8 @@ package com.host.algorithm.leetcode;
     TreeNode(int x) {
         val = x;
     }
-}
-
+}*/
+import com.util.TreeNode;
 public class so98 {
     /**
      * 验证二叉搜索树
