@@ -1,5 +1,7 @@
+/*
 package com.host.algorithm.dongtaiguihua;
 
+*/
 /**
  * Created by xiaoy on 2019/11/29
  * 该人从{0，0}走到{n，m}
@@ -8,7 +10,8 @@ package com.host.algorithm.dongtaiguihua;
  *
  *
  * 变式：求摘花生最少的
- */
+ *//*
+
 public class 摘花生 {
     private int[][] hs = {{1,3,4},
                           {2,3,4},
@@ -31,3 +34,4 @@ public class 摘花生 {
         s.solve();
     }
 }
+*/

@@ -1,4 +1,4 @@
-package com.host.algorithm.多线程生产者消费者.t1;
+package com.host.algorithm.producterAndCoumser.t1;
 
 /**
  * Created by xiaoy on 2020/1/9

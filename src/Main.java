@@ -8,6 +8,9 @@ class MyObject7 extends Main {
 }
 
 public class Main {
+    public static void main(String[] args) {
+        System.out.println(Double.doubleToLongBits(3.15547/2));
+    }
     protected  void te() throws CloneNotSupportedException {super.clone();}
     static public  ArrayList<Integer> printMatrix(int [][] matrix) {
         ArrayList<Integer> list = new ArrayList<>();
@@ -40,7 +43,7 @@ public class Main {
         }
         return list;
     }
-    public static void main(String[] args) {
+    public static void main1(String[] args) {
         int [][] matrix = {{1,2,3,4},{5,6,7,8},{9,10,11,12},{13,14,15,16}};
         printMatrix(matrix);
 

@@ -1,11 +1,11 @@
-package com.host.algorithm.多线程生产者消费者.t1;
+package com.host.algorithm.producterAndCoumser.t1;
 
 import java.util.concurrent.*;
 
 /**
  * Created by xiaoy on 2020/1/10
  */
-public class 线程池 {
+public class ThreadEx {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         Callable<Integer> c = new CallableTest();
         Callable<Integer> c1 = ()->{

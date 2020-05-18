@@ -1,4 +1,4 @@
-package com.host.algorithm.多线程生产者消费者.t1;
+package com.host.algorithm.producterAndCoumser.t1;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;

@@ -1,10 +1,13 @@
+/*
 package com.host.algorithm;
 
 import java.util.Stack;
 
+*/
 /**
  * Created by xiaoy on 2019/12/20
- */
+ *//*
+
 public class 判断栈的弹出顺序 {
     public static  boolean IsPopOrder(int [] pushA,int [] popA) {
         Stack<Integer> s = new Stack<>();
@@ -32,3 +35,4 @@ public class 判断栈的弹出顺序 {
         IsPopOrder(a,b);
     }
 }
+*/

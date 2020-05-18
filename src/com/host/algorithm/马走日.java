@@ -1,4 +1,6 @@
+
 package com.host.algorithm;
+
 
 /**
  * Created by xiaoy on 2019/11/26
@@ -15,10 +17,12 @@ public class 马走日 {
     public int[] dy = {1,2,-2,-1,-1,-2,2,-1};
 
 
-    /**
+
+/**
      *
      * @param temp 马儿现在的位置
      */
+
     public void move (int[] temp){
         int[] next = new int[2];
         if (temp[0] < 0 || temp[1] < 0 || temp[0] >= qipan[0].length || temp[1] >= qipan.length){
@@ -73,3 +77,4 @@ public class 马走日 {
         r.move(new int[2]);
     }
 }
+

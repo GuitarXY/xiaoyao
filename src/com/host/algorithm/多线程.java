@@ -1,8 +1,11 @@
+/*
 package com.host.algorithm;
 
+*/
 /**
  * Created by xiaoy on 2019/12/27
- */
+ *//*
+
 public class 多线程 {
     private static int a = 0,b =0;
     private static int x = 0,y =0;
@@ -39,3 +42,4 @@ public class 多线程 {
 
     }
 }
+*/

@@ -1,12 +1,15 @@
+/*
 package com.host.algorithm;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
+*/
 /**
  * Created by xiaoy on 2019/12/23
- */
+ *//*
+
 public class 二叉树广度优先遍历 {
     public static void main(String[] args){
         TreeNode treeNode = new TreeNode(1);
@@ -17,12 +20,14 @@ public class 二叉树广度优先遍历 {
         TreeNode treeNode5 = new TreeNode(6);
         TreeNode treeNode6 = new TreeNode(7);
         TreeNode treeNode7 = new TreeNode(8);
-        /**
+        */
+/**
          *              1
          *          2        5
          *        3   4   6     7
          *                 8
-         * */
+         * *//*
+
         treeNode1.left = treeNode2;
         treeNode1.right = treeNode3;
         treeNode4.left = treeNode5;
@@ -34,11 +39,13 @@ public class 二叉树广度优先遍历 {
         System.out.println(list);
     }
 
-    /**
+    */
+/**
      * 用队列实现广度优先遍历
      * @param root
      * @return
-     */
+     *//*
+
     private static ArrayList<ArrayList<Integer>> findNFS(TreeNode root) {
         ArrayList<ArrayList<Integer>> res=new ArrayList<>();
         if(root==null)
@@ -65,3 +72,4 @@ public class 二叉树广度优先遍历 {
 
     }
 }
+*/

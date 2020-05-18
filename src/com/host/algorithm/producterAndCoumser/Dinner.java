@@ -1,11 +1,11 @@
-package com.host.algorithm.多线程生产者消费者;
+package com.host.algorithm.producterAndCoumser;
 
 /**
  * Created by xiaoy on 2020/1/9
  * 给的关系是
  *      （筷子0） 0号哲学家（筷子1） 1（筷子2） 2（筷子3） 3（筷子4）
  */
-public class 哲学家进餐 {
+public class Dinner {
      public static void main(String[] args){
          Fork fork = new Fork();
          new Philosopher("0",fork).start();
