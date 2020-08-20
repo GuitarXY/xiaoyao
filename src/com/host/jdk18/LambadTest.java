@@ -1,7 +1,12 @@
 package com.host.jdk18;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -12,7 +17,7 @@ import static java.util.stream.Collectors.toList;
  * created by xiaoyao01  on 2020/5/11.
  **/
 public class LambadTest {
-    public static void main(String[] args) {
+    public static void main5(String[] args) {
 //        List<String> list = Arrays.asList("1","2","1");
 //        List<String> collect = list.stream().distinct().filter(s -> s.equals("1")).collect(toList());
 //        System.out.println(collect);
@@ -39,14 +44,23 @@ public class LambadTest {
         List<Teacher> citys1 = submits.stream().map(submit -> submit.getTeacher()).filter(teacher -> teacher.getWorkCity().equals("南昌")).collect(toList());
         System.out.println(citys);
         System.out.println(citys1);
-
-
         Stream<String> sorted = submits.stream().map(submit -> submit.getTeacher().getName()).distinct().sorted(Comparator.comparing(s -> s.equals("小白")));
         System.out.println(sorted.collect(Collectors.joining()));
         submits.stream().map(Submit::getTeacher).filter(teacher -> teacher.getWorkCity().equals("南昌")).distinct();
+    }
 
+    public static void main(String[] args) throws ParseException {
+        List<Long> longList = Arrays.asList(213L,13145L);
+        System.out.println(longList);
+        Calendar c = Calendar.getInstance();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date startDate = sdf.parse("2020-8-17");
+        Date now =sdf.parse("2020-8-20");
+        long l = (now.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24);
+        System.out.println(l);
     }
 }
+
 class Teacher{
     String name;
     String workCity;
