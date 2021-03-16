@@ -10,11 +10,11 @@ package com.host.algorithm;
  */
 public class 马走日 {
     //8*8的国际象棋棋盘
-    public int[][] qipan = new int[8][8];
-    public static int index;//马走到第几步
+    public int[][] qipan = new int[3][3];
+    public static int index = 1;//马走到第几步
     //马能走的方向
     public int[] dx = {-2,-1,-1,-2,2,1,1,2};
-    public int[] dy = {1,2,-2,-1,-1,-2,2,-1};
+    public int[] dy = {1,2,-2,-1,1,-2,2,-1};
 
 
 
@@ -24,18 +24,22 @@ public class 马走日 {
      */
 
     public void move (int[] temp){
+        if (temp[0] == 0 && temp[1] == 0) {
+            //初始化第一步在七点
+            qipan[temp[0]][temp[1]] = 1;
+        }
         int[] next = new int[2];
         if (temp[0] < 0 || temp[1] < 0 || temp[0] >= qipan[0].length || temp[1] >= qipan.length){
             return;
         }
-        if (qipan[temp[0]][temp[1]] != 0){ // 如果这条路被走过，也返回
+        if (qipan[temp[0]][temp[1]] != 0 && temp[0]!= 0 && temp[1]!= 0){ // 如果这条路被走过，也返回
             return;
         }
 
         qipan[temp[0]][temp[1]] = index;//代表第八步可以走
         index ++ ;
 
-        if (index > qipan[0].length * qipan.length){
+        if (index > (qipan[0].length ) * (qipan.length) ) {
             output();
             //这里可以把最优值保存起来，去找最短的
             return;
@@ -44,13 +48,14 @@ public class 马走日 {
             for (int i = 0; i < 8; i++) {
                 next[0] = temp[0] + dx[i];
                 next[1] = temp[1] + dy[i];
-                if (next[0] < 0 || next[1] < 0 || next[0] > qipan[0].length || next[1] > qipan.length){
+                if (next[0] < 0 || next[1] < 0 || next[0] > qipan[0].length -1|| next[1] > qipan.length -1 ){
+                    continue;
+                }else if(qipan[next[0]][next[1]]!=0) {
                     continue;
                 }else {
                     move(next);
                 }
             }
-
         }
         //如果所有的点都不行，这一步就回退
         qipan[temp[0]][temp[1]] = 0;
@@ -58,7 +63,6 @@ public class 马走日 {
         if (index == 0 ){
             System.out.println("所有方法都试过了");
         }
-
     }
 
 
@@ -74,6 +78,7 @@ public class 马走日 {
     }
     public static void main(String[] args){
         马走日 r = new 马走日();
+
         r.move(new int[2]);
     }
 }
